@@ -4,7 +4,7 @@ let db = require('./db/inex')
 app.get('/demo',(req,res)=>{
     res.send('测试接口成功')
 })
-app.get('/list',(req,res)=>{
+app.get('/demo/list',(req,res)=>{
     let questSql = 'SELECT * FROM USER'
     db.query(questSql,(err,data)=>{
         if(err){res.send({

@@ -11,18 +11,31 @@
 </template>
 
 <script>
-import service from "../utils/request.js";
+import service from "../utils/request";
 export default {
   name: "Home",
-  data(){
-    return {
-    }
+  data() {
+    return {};
   },
-  methods:{
-    getlist(){
-      console.log("获取")
-    }
-  }
+  methods: {
+    getlist() {
+      console.log("获取");
+      service.get("demo/list").then((res) => {
+        console.log(res);
+        if (res.data.code == 1) {
+          this.$message({
+            message: "恭喜你，这是一条成功消息",
+            type: "success",
+          });
+        } else {
+          this.$message({
+            message: "查询失败",
+            type: "error",
+          });
+        }
+      });
+    },
+  },
 };
 </script>
 
