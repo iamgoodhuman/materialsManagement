@@ -7,6 +7,7 @@
       >
     </el-row>
     <el-button @click="getlist">默认按钮</el-button>
+    新增
   </div>
 </template>
 
