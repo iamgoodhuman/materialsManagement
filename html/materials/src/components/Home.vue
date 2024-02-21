@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    {{ data }}
     <el-row>
       <el-col :span="12"><div class="grid-content bg-purple">11</div></el-col>
       <el-col :span="12"
@@ -7,7 +8,7 @@
       >
     </el-row>
     <el-button @click="getlist">默认按钮</el-button>
-    新增
+    <el-button @click="getUser">查询</el-button>
   </div>
 </template>
 
@@ -16,13 +17,22 @@ import service from "../utils/request";
 export default {
   name: "Home",
   data() {
-    return {};
+    return {
+      data:[]
+    };
   },
   methods: {
+    getUser(){
+      service.get("demo/list").then((res) => {
+        console.log(res);
+        if(res.data.code == 1){
+          this.data = res.data.data
+        }
+      });
+    },
     getlist() {
       console.log("获取");
       service.get("demo/list").then((res) => {
-        console.log(res);
         if (res.data.code == 1) {
           this.$message({
             message: "恭喜你，这是一条成功消息",
