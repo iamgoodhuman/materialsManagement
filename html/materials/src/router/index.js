@@ -8,6 +8,7 @@ const router = new VueRouter({
     routes:[
         {path:'/insure/insure',component:Query},
         {path:'/insure/enter',component:Enter},
+        {path:'/',component:Query},
     ]
 })
 
