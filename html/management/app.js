@@ -31,12 +31,13 @@ app.get('/demo/list', (req, res) => {
 app.post('/demo/insure/enter', (req, res) => {
     console.log(req.body);
     let info = req.body
-    let enterSql = "INSERT INTO insure (insure_company, insure_name,insure_type,insure_date,insure_beneficiary) VALUES (" + info.insure_company + ',' + info.insure_name + ',' + info.insure_type + ',' + info.insure_date + ',' + info.insure_beneficiary + ")"
+    let enterSql = "INSERT INTO insure (insure_company, insure_name,insure_type,insure_date,insure_beneficiary) VALUES (" + '"' + info.insure_company + '",'+ '"' + info.insure_name  + '",'+ '"' + info.insure_type + '",'+ '"' + info.insure_date + '",'+ '"' + info.insure_beneficiary  + '"' + ")"
+    console.log("enterSql",enterSql)
     db.query(enterSql, (err, data) => {
         if (err) {
             res.send({
                 code: 0,
-                msg: "插入失败"
+                msg: "插入失败"+err
             })
         }else{
             res.send({
