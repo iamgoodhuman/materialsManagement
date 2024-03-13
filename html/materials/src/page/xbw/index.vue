@@ -21,6 +21,7 @@ export default {
       for (let i = 1; i<=36; i++) {
         var img = document.createElement("img"); //创建li节点
         img.src = require( "@/assets/xbw/0" + i + ".jpg" )
+        console.log("地址",   )
         ula.appendChild(img); //将li加入ul
       }
     },
