@@ -1,39 +1,47 @@
 <template>
     <div>
-        <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-            <el-submenu index="1">
-                <template slot="title">保险</template>
-                <el-menu-item index="insureQuery">保险查看</el-menu-item>
-                <el-menu-item index="insureEnter">保险录入</el-menu-item>
-            </el-submenu>
-
-            <el-submenu index="2">
-                <template slot="title">BMI</template>
-                <el-menu-item index="2-1">BMI查看</el-menu-item>
-                <el-menu-item index="2-2">BMI录入</el-menu-item>
-            </el-submenu>
-        </el-menu>
+        <van-tabbar v-model="active" @change="onChange">
+            <van-tabbar-item icon="home-o">体脂</van-tabbar-item>
+            <van-tabbar-item icon="search">保险</van-tabbar-item>
+            <van-tabbar-item icon="friends-o">标签3</van-tabbar-item>
+            <van-tabbar-item icon="setting-o">标签4</van-tabbar-item>
+        </van-tabbar>
         <router-view></router-view>
     </div>
 </template>
 
 <script>
-import axios from "@/utils/request";
+import { Tabbar, TabbarItem } from 'vant';
+import { Notify } from 'vant';
 export default {
     name: "Index",
     data() {
         return {
-            activeIndex: '1',
+            active: 0,
         };
     },
     methods: {
-        handleSelect(key, keyPath) {
-            if (key == 'insureQuery') {
-                this.$router.push({ path: '/insure/insure' }).catch(err => err);
-            } else if (key == 'insureEnter') {
+        onChange(index) {
+            console.log("index", index)
+            if (index == 0) {
+                this.$router.push({ path: '/bmi/index' }).catch(err => err);
+            } else if (index == 1) {
                 this.$router.push({ path: '/insure/enter' }).catch(err => err);
+            } else if (index == 2) {
+
+                this.$router.push({ path: '/insure/insure' }).catch(err => err);
             }
-        }
+        },
+        // handleSelect(key, keyPath) {
+        //     if (key == 'insureQuery') {
+        //         this.$router.push({ path: '/insure/insure' }).catch(err => err);
+        //     } else if (key == 'insureEnter') {
+        //         this.$router.push({ path: '/insure/enter' }).catch(err => err);
+        //     } else if (key == 'BmiIndex') {
+        //         this.$router.push({ path: '/bmi/index' }).catch(err => err);
+        //     }
+        // }
+
 
     },
 };

@@ -4,6 +4,7 @@ import Query from '../page/insure/query.vue'
 import Enter from '../page/insure/enter.vue'
 import Xbw from '../page/xbw/index.vue'
 import BmiEnter from '../page/bmi/enter.vue'
+import BmiIndex from '../page/bmi/index.vue'
 import Index from '../page/index.vue'
 Vue.use(VueRouter)
 
@@ -14,6 +15,7 @@ const router = new VueRouter({
                 { path: '/insure/insure', component: Query },
                 { path: '/insure/enter', component: Enter },
                 { path: '/bmi/enter', component: BmiEnter },
+                { path: '/bmi/index', component: BmiIndex },
             ]
         },
 

@@ -1,19 +1,7 @@
 <template>
   <div class="enter">
-    <h3>体质录入</h3>
-    <el-form ref="form" :model="form" :rules="rules"  label-width="80px">
-      <el-form-item label="录入时间" prop="time">
-        <el-date-picker v-model="form.time" type="date" value-format="yyyy-MM-dd HH:mm" placeholder="选择日期">
-        </el-date-picker>
-      </el-form-item>
-      <el-form-item label="体重(kg)" prop="weight">
-        <el-input v-model="form.weight"></el-input>
-      </el-form-item>
-      <el-form-item>
-        <el-button type="primary" @click="onSubmit('form')">录入</el-button>
-        <el-button>取消</el-button>
-      </el-form-item>
-    </el-form>
+    <h3>信息录入页</h3>
+    
   </div>
 </template>
 
