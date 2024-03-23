@@ -5,6 +5,8 @@ import App from './App.vue';
 import router from '@/router/index'
 import Vant from 'vant';
 import 'vant/lib/index.css';
+import * as echarts from "echarts";
+Vue.prototype.$echarts = echarts
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.use(Vant);
