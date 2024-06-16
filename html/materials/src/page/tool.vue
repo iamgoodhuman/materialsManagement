@@ -14,7 +14,7 @@
 import { Tabbar, TabbarItem } from 'vant';
 import { Notify } from 'vant';
 export default {
-    name: "Index",
+    name: "Tool",
     data() {
         return {
             active: 0,
