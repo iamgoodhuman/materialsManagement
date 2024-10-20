@@ -10,6 +10,8 @@
                     <van-button size="small" type="primary">图片验证码</van-button>
                 </template>
             </van-field>
+
+            <van-button round block type="info" native-type="submit">提交</van-button>
         </van-form>
     </div>
 </template>
