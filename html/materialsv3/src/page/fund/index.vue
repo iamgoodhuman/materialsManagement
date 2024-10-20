@@ -38,6 +38,7 @@ export default {
 
 <style lang="less" scoped>
 .fundHeader {
+  display: flex;
   justify-content: space-around;
 }
 

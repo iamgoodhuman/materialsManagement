@@ -4,10 +4,10 @@ import Home from '../page/home'
 // import Welcome from '../components/Welcome.vue'
 import Fund from '../page/fund'
 const routes = [
-//   {
-//     path: '/',
-//     redirect: '/login'
-//   },
+  {
+    path: '/',
+    redirect: '/home'
+  },
 //   {
 //     path: '/login',
 //     component: Login
