@@ -1,15 +1,17 @@
 <template>
-  <div>
+  <div class="fund">
     <ul class="fundHeader">
       <il>本月总收入</il>
       <il>本月固定存</il>
       <il>本月总支出</il>
     </ul>
+
     <ul class="fundHeader">
       <il>本月预算</il>
       <il>结余预算</il>
       <il>现金流剩余</il>
     </ul>
+
     <el-row :gutter="20" class="expenses">
       <el-col :span="10"> <el-card class="box-card">
           <div>
@@ -48,7 +50,6 @@
       </el-col>
 
     </el-row>
-
   </div>
 </template>
 
@@ -61,12 +62,15 @@ export default {
 <style lang="less" scoped>
 .fundHeader {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 20px;
 }
-
-.box-card {
+.expenses{
+  .box-card{
+    box-shadow:none;
+  }
   ul {
-    list-style: none;
+    list-style: none !important;
     padding: 0;
 
     li {

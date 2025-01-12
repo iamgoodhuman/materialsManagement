@@ -1,11 +1,11 @@
 <template>
     <div class="common-layout">
         <el-container>
-            <el-header class="header">header</el-header>
+            <el-header class="header">
+                <Weather></Weather>
+            </el-header>
             <el-container>
                 <el-aside>
-
-
                     <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
                         <el-sub-menu index="1">
                             <template #title>
@@ -30,12 +30,9 @@
 </template>
 <script setup>
 import {
-    Document,
-    Menu as IconMenu,
-    Location,
-    Setting,
+Coin
 } from '@element-plus/icons-vue'
-
+import Weather from '../../components/weather.vue'
 </script>
 <style>
 .common-layout {
@@ -49,6 +46,7 @@ import {
 }
 
 .header {
-    background-color: #545c64;
+    background-color: #3c8dbc;
+    color:white
 }
 </style>
