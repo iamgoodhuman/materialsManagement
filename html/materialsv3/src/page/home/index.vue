@@ -4,11 +4,22 @@
             <el-header class="header">header</el-header>
             <el-container>
                 <el-aside>
-                    菜单
+
+
+                    <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
+                        <el-sub-menu index="1">
+                            <template #title>
+                                <el-icon><Coin /></el-icon>
+                                <span>收入与支出</span>
+                            </template>
+                            <el-menu-item index="1-1">展示</el-menu-item>
+                            <el-menu-item index="1-2">录入</el-menu-item>
+                        </el-sub-menu>
+                    </el-menu>
                 </el-aside>
                 <el-main>
                     <el-breadcrumb separator="/">
-                        <el-breadcrumb-item >首页</el-breadcrumb-item>
+                        <el-breadcrumb-item>首页</el-breadcrumb-item>
                     </el-breadcrumb>
                     <router-view></router-view>
 

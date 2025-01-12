@@ -10,7 +10,7 @@
       <il>结余预算</il>
       <il>现金流剩余</il>
     </ul>
-    <el-row :gutter="20">
+    <el-row :gutter="20" class="expenses">
       <el-col :span="10"> <el-card class="box-card">
           <div>
             <ul>
@@ -24,9 +24,31 @@
           </div>
         </el-card></el-col>
       <el-col :span="10"> <el-card class="box-card">
-          <div  >2</div>
+          <div>曲线</div>
         </el-card></el-col>
     </el-row>
+    <el-row :gutter="20" class="budget">
+      <el-col :span="10">
+
+        <ul>
+          <li>本月预算</li>
+          <li>买菜预算</li>
+          <li>孩子预算</li>
+          <li>超市预算</li>
+          <li>其他预算</li>
+        </ul>
+        <ul>
+          <li>本月预算</li>
+          <li>买菜预算</li>
+          <li>孩子预算</li>
+          <li>超市预算</li>
+          <li>其他预算</li>
+        </ul>
+
+      </el-col>
+
+    </el-row>
+
   </div>
 </template>
 
@@ -43,11 +65,22 @@ export default {
 }
 
 .box-card {
-  ul{
+  ul {
     list-style: none;
     padding: 0;
-    li{
-      line-height:35px;
+
+    li {
+      line-height: 35px;
+    }
+  }
+}
+
+.budget {
+  .el-col {
+    display: flex;
+    justify-content: space-between;
+    li {
+      line-height: 35px;
     }
   }
 }
