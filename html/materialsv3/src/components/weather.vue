@@ -13,8 +13,8 @@ export default {
     },
     created() {
         navigator.geolocation.getCurrentPosition(function (res) {
-            this.latitude = res.coords.latitude
-            this.longitude = res.coords.longitude
+            // this.latitude = res.coords.latitude
+            // this.longitude = res.coords.longitude
         });
     },
     mounted() {
