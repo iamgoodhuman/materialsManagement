@@ -1,24 +1,34 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-// import Login from '../components/Login.vue'
 import Home from '../page/home'
-// import Welcome from '../components/Welcome.vue'
-import Fund from '../page/fund'
+ import Welcome from '../components/wel.vue'
+import budgetDisplay from '../page/fund'
 const routes = [
   {
     path: '/',
     redirect: '/home'
   },
-//   {
-//     path: '/login',
-//     component: Login
-//   },
   {
     path: '/home',
     component: Home,
-    redirect: '/fund',
-    children: [
-      { path: '/fund', component: Fund },
-    
+    redirect: {name: "Welcome"}, 
+    redirect: '/welcome',
+    children:   [
+      {
+        path: "/welcome",
+        name: "Welcome",
+        component: Welcome,
+        meta: {
+          title: "首页"
+        }
+      },
+      {
+        path: "/budgetDisplay",
+        name: "budgetDisplay",
+        component: budgetDisplay,
+        meta: {
+          title: "预算-展示"
+        }
+      }
     ]
   }
 ]

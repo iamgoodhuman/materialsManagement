@@ -1,14 +1,14 @@
 <template>
     <div class="common-layout">
         <el-container>
-
-
             <el-header class="header">  <Weather></Weather> </el-header>
             <el-container>
                 <el-aside width="200px"> 
                     <Nav></Nav>
                 </el-aside>
-                <el-main>Main</el-main>
+                <el-main>
+                    <router-view></router-view>
+                </el-main>
             </el-container>
 
         </el-container>
@@ -18,7 +18,7 @@
 import Weather from '../../components/weather.vue'
 import Nav from '../../components/nav.vue'
 </script>
-<style>
+<style scoped>
 .common-layout {
     width: 100%;
     height: 100%;

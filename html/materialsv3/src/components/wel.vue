@@ -1,6 +1,6 @@
 <template>
     <div class="common-layout">
-
+        wel
     </div>
 </template>
 <script>
@@ -12,10 +12,7 @@ export default {
         }
     },
     created() {
-        navigator.geolocation.getCurrentPosition(function (res) {
-            // this.latitude = res.coords.latitude
-            // this.longitude = res.coords.longitude
-        });
+        
     },
     mounted() {
 
