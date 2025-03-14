@@ -1,6 +1,6 @@
 <template>
     <div class="common-layout">
-
+        {{ latitude  }} {{longitude }}
     </div>
 </template>
 <script>
@@ -12,13 +12,23 @@ export default {
         }
     },
     created() {
-        navigator.geolocation.getCurrentPosition(function (res) {
-            // this.latitude = res.coords.latitude
-            // this.longitude = res.coords.longitude
-        });
+        
     },
     mounted() {
+        this.position()
+    },
+    methods:{
+        position(){
+            navigator.geolocation.getCurrentPosition(this.showPosition, this.showError);
+        },
+        showPosition(position) {
+             console.log("position",position); 
+             this.latitude = position.coords.latitude
+             this.longitude = position.coords.longitude
+        },
+        showError(){
 
+        }
     }
 }
 </script>
