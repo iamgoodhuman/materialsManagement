@@ -1,13 +1,17 @@
 <template>
+  <el-breadcrumb :separator-icon="ArrowRight">
+    <el-breadcrumb-item>消费</el-breadcrumb-item>
+    <el-breadcrumb-item>展示</el-breadcrumb-item>
+  </el-breadcrumb>
   <div class="fund">
     <ul class="fundHeader">
-      <il>本月总收入</il>
-      <il>本月固定存</il>
-      <il>本月总支出</il>
+      <il>{{ this.month }}月总收入</il>
+      <il>{{ this.month }}月固定存</il>
+      <il>{{ this.month }}月总支出</il>
     </ul>
 
     <ul class="fundHeader">
-      <il>本月预算</il>
+      <il>{{ this.month }}月预算</il>
       <il>结余预算</il>
       <il>现金流剩余</il>
     </ul>
@@ -55,7 +59,23 @@
 
 <script>
 export default {
+  data() {
+    return {
+      month: "", //本月
+    }
+  },
+  created() {
 
+  },
+  mounted() {
+    this.month = new Date().getMonth() + 1;
+  },
+  methods: {
+    changeSidebar(path) {
+      console.log("path", path)
+      this.$router.push(path);
+    },
+  }
 }
 </script>
 
@@ -65,10 +85,12 @@ export default {
   justify-content: space-between;
   padding: 20px;
 }
-.expenses{
-  .box-card{
-    box-shadow:none;
+
+.expenses {
+  .box-card {
+    box-shadow: none;
   }
+
   ul {
     list-style: none !important;
     padding: 0;
@@ -83,6 +105,7 @@ export default {
   .el-col {
     display: flex;
     justify-content: space-between;
+
     li {
       line-height: 35px;
     }

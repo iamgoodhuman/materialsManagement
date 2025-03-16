@@ -1,7 +1,9 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../page/home'
- import Welcome from '../components/wel.vue'
-import budgetDisplay from '../page/fund'
+import welcome from '../components/wel.vue'
+import budgetDisplay  from '../page/budget/budgetDisplay.vue'
+import budgetEnter  from '../page/budget/budgetEnter.vue'
+import bmiDisplay from '../page/bmi/bmiDisplay.vue'
 const routes = [
   {
     path: '/',
@@ -16,7 +18,7 @@ const routes = [
       {
         path: "/welcome",
         name: "Welcome",
-        component: Welcome,
+        component: welcome,
         meta: {
           title: "首页"
         }
@@ -27,6 +29,22 @@ const routes = [
         component: budgetDisplay,
         meta: {
           title: "预算-展示"
+        }
+      },
+      {
+        path: "/budgetEnter",
+        name: "budgetEnter",
+        component: budgetEnter,
+        meta: {
+          title: "预算-录入"
+        }
+      },
+      {
+        path: "/bmiDisplay",
+        name: "bmiDisplay",
+        component: bmiDisplay,
+        meta: {
+          title: "BMI-展示"
         }
       }
     ]
