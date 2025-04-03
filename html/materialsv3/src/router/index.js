@@ -4,7 +4,16 @@ import welcome from '../components/wel.vue'
 import budgetDisplay  from '../page/budget/budgetDisplay.vue'
 import budgetEnter  from '../page/budget/budgetEnter.vue'
 import bmiDisplay from '../page/bmi/bmiDisplay.vue'
+import Login from '../Login.vue'
 const routes = [
+  {
+    path: "/login",
+    name: "login",
+    component: Login,
+    meta: {
+      title: "登录"
+    }
+  },
   {
     path: '/',
     redirect: '/home'

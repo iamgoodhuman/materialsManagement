@@ -1,6 +1,6 @@
 <template>
   <div class="common-layout">
-     录入
+     luru y 
   </div>
 </template>
 <script>
